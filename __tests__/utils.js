@@ -3,11 +3,11 @@ import app from '../app.js'
 
 async function getToken() {
   const payload = {
-    'email': 'test@gmail.com',
+    'email': 'test1@gmail.com',
     'password': '123456789'
   }
   const { body } = await request(app).post('/auth/login').send(payload)
-  return body.accesToken
+  return body.accessToken
 }
 
 export default getToken

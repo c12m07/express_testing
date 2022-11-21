@@ -51,8 +51,8 @@ describe('Test the auth endpoints', () => {
 
   it('Inicio correcto de sesion', async () => {
     const payload = {
-      'email': 'test@gmail.com',
-      'password': '12345678'
+      'email': 'test1@gmail.com',
+      'password': '123456789'
     }
 
     const { body, status } = await request(app).post('/auth/login').type('json').send(payload)
@@ -61,7 +61,7 @@ describe('Test the auth endpoints', () => {
     expect(body.message).contains('Login successfull')
   })
 
-  it('Inicio correcto de sesion', async () => {
+  it('Email no encontrado', async () => {
     const payload = {
       'email': '00000@gmail.com',
       'password': '12345678'
@@ -70,7 +70,6 @@ describe('Test the auth endpoints', () => {
     const { body, status } = await request(app).post('/auth/login').type('json').send(payload)
     
     expect(status).to.equal(404)
-    expect(body.message).contains('No user found')
   })
 
   it('Contraseña incorrecta', async () => {
