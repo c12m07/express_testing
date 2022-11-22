@@ -11,21 +11,21 @@ runDotEnv();
 const config = {
   "development": {
     "username": process.env.DB_USER || "postgres",
-    "password": pass,
+    "password": process.env.DB_PASSWORD,
     "database": process.env.DB_NAME || "prueba1",
     "host": process.env.DB_HOST,
     "dialect": "postgres"
   },
   "test": {
     "username": process.env.DB_USER || "postgres",
-    "password": pass,
+    "password": process.env.DB_PASSWORD,
     "database": process.env.DB_NAME || "prueba1",
     "host": process.env.DB_HOST,
     "dialect": "postgres"
   },
   "production": {
     "username": process.env.DB_USER || "postgres",
-    "password": pass,
+    "password": process.env.DB_PASSWORD,
     "database": process.env.DB_NAME || "prueba1",
     "host": process.env.DB_HOST || "localhost",
     "dialect": "postgres"
