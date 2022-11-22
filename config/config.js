@@ -1,5 +1,3 @@
-const pass = "7539182465" || "";
-
 function runDotEnv() {
   if (process.env.ENV === 'development') {
     import('dotenv').then(dotenv => dotenv.config({ path: '.env' }));
