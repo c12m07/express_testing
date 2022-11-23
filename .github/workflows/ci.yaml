@@ -1,7 +1,7 @@
 name: Express.js CI
 on:
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   test:
@@ -11,7 +11,7 @@ jobs:
         image: postgres
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: "7539182465"
+          POSTGRES_PASSWORD: 7539182465
           POSTGRES_DB: prueba1
         options: >-
           --health-cmd pg_isready
