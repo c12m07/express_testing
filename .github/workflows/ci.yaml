@@ -4,33 +4,36 @@ on:
     branches: [ main ]
 
 jobs:
+  # linting - analisis de código estatico 
+  # analisis de ciber seguridad
+  # code smells sonarcube 
+  # checkear que se pueda hacer build
+  # subir builds de docker
+  # notificar a otros lugares 
   test:
     runs-on: ubuntu-latest
     services:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: "postgres"
-          POSTGRES_PASSWORD: "7539182465"
-          POSTGRES_DB: "prueba1"
+          POSTGRES_USER: larnu
+          POSTGRES_PASSWORD: larnuisgold
+          POSTGRES_DB: larnu_demo_test
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
         ports:
-          - 5432:5432
+            - 5432:5432
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "16.17.1"
-
-      - name: Installing Dependecies
-        run: npm i
-
-      - name: testing our app
-        run: npm test
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: docker build --file .docker/test/Dockerfile -t test_image .
+      
+      - name: run docker tests 
+        # network host es para que nuestro container corra en host 
+        run: docker run --network="host" test_image
