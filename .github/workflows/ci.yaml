@@ -1,7 +1,7 @@
 name: Express.js CI
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
@@ -10,22 +10,16 @@ jobs:
       postgres:
         image: postgres
         env:
-<<<<<<< HEAD
-          POSTGRES_USER: "postgres"
-          POSTGRES_PASSWORD: "7539182465"
-          POSTGRES_DB: "prueba1"
-=======
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: "7539182465"
           POSTGRES_DB: prueba1
->>>>>>> 650c38a132bb7bcc1472087b6614d4386a496522
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
         ports:
-            - 5432:5432
+          - 5432:5432
     steps:
       - name: Checkout
         uses: actions/checkout@v3
