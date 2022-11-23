@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: "16.17.1"
+          node-version: "18.12.1"
 
       - name: Installing Dependencies
         run: npm i
