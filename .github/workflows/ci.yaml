@@ -23,3 +23,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.17.1"
+
+      - name: Installing Dependecies
+        run: npm i
+
+      - name: testing our app
+        run: npm test
