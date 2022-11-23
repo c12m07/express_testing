@@ -24,12 +24,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup node
+      - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: "16.17.1"
 
-      - name: Installing Dependecies
+      - name: Installing Dependencies
         run: npm i
 
       - name: testing our app
