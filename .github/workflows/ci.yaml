@@ -4,21 +4,15 @@ on:
     branches: [ main ]
 
 jobs:
-  # linting - analisis de código estatico 
-  # analisis de ciber seguridad
-  # code smells sonarcube 
-  # checkear que se pueda hacer build
-  # subir builds de docker
-  # notificar a otros lugares 
   test:
     runs-on: ubuntu-latest
     services:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: larnu
-          POSTGRES_PASSWORD: larnuisgold
-          POSTGRES_DB: larnu_demo_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: "7539182465"
+          POSTGRES_DB: prueba1
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
