@@ -20,8 +20,23 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
+          
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-deply:
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "18.12.1"
+
+      - name: Installing Dependecies
+        run: npm i
+
+      - name: testing our app
+        run: npm test
+
+deploy:
   needs: [ test ]
   name: Wait for Deploy
   runs-on: ubuntu-18.04
