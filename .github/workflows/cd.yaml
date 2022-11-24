@@ -21,38 +21,6 @@ jobs:
         ports:
           - 5432:5432
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: "7539182465"
-          POSTGRES_DB: prueba1
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "18.12.1"
-
-      - name: Installing Dependecies
-        run: npm i
-
-      - name: testing our app
-        run: npm test
-
 deply:
   needs: [ test ]
   name: Wait for Deploy
