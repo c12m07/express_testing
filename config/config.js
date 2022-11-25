@@ -12,15 +12,15 @@ const config = {
     username: process.env.DB_USER || "postgres",
     password: process.env.DB_PASSWORD || "postgres",
     database: process.env.DB_NAME || "prueba1",
-    host: process.env.DB_HOST,
+    host: process.env.DB_HOST || "localhost",
     logging: true,
     dialect: "postgres"
   },
   test: {
     username: process.env.DB_USER || "postgres",
-    password: process.env.DB_PASSWORD,
+    password: process.env.DB_PASSWORD || "postgres",
     database: process.env.DB_NAME || "prueba1",
-    host: process.env.DB_HOST,
+    host: process.env.DB_HOST || "localhost",
     port: process.env.DB_PORT,
     logging: false,
     dialect: "postgres"
@@ -29,7 +29,7 @@ const config = {
     username: process.env.DB_USER || "postgres",
     password: process.env.DB_PASSWORD || "postgres",
     database: process.env.DB_NAME || "prueba1",
-    host: process.env.DB_HOST,
+    host: process.env.DB_HOST || "localhost",
     logging: false,
     dialect: "postgres"
   }
