@@ -19,10 +19,10 @@ const config = {
   test: {
     username: process.env.DB_USER || "postgres",
     password: process.env.DB_PASSWORD || "postgres",
-    database: process.env.DB_NAME || "prueba2ssssssssssssss",
+    database: process.env.DB_NAME || "prueba",
     host: process.env.DB_HOST || "localhost",
     port: process.env.DB_PORT || 5432,
-    logging: false,
+    logging: true,
     dialect: "postgres"
   },
   production: {
