@@ -30,7 +30,7 @@ const config = {
     password: process.env.DB_PASSWORD || "postgres",
     database: process.env.DB_NAME || "prueba1",
     host: process.env.DB_HOST || "localhost",
-    logging: false,
+    logging: true,
     dialect: "postgres"
   }
 }
