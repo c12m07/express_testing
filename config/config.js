@@ -8,26 +8,30 @@ function runDotEnv() {
 runDotEnv();
 
 const config = {
-  "development": {
-    "username": process.env.DB_USER || "postgres",
-    "password": process.env.DB_PASSWORD || "7539182465",
-    "database": process.env.DB_NAME || "prueba1",
-    "host": process.env.DB_HOST,
-    "dialect": "postgres"
+  development: {
+    username: process.env.DB_USER || "postgres",
+    password: process.env.DB_PASSWORD || "postgres",
+    database: process.env.DB_NAME || "prueba1",
+    host: process.env.DB_HOST || "localhost",
+    logging: true,
+    dialect: "postgres"
   },
-  "test": {
-    "username": process.env.DB_USER || "postgres",
-    "password": process.env.DB_PASSWORD || "7539182465",
-    "database": process.env.DB_NAME || "prueba1",
-    "host": process.env.DB_HOST,
-    "dialect": "postgres"
+  test: {
+    username: process.env.DB_USER || "postgres",
+    password: "postgres",
+    database: process.env.DB_NAME || "prueba",
+    host: process.env.DB_HOST || "localhost",
+    port: process.env.DB_PORT || 5432,
+    logging: true,
+    dialect: "postgres"
   },
-  "production": {
-    "username": process.env.DB_USER || "postgres",
-    "password": process.env.DB_PASSWORD || "7539182465",
-    "database": process.env.DB_NAME || "prueba1",
-    "host": process.env.DB_HOST || "localhost",
-    "dialect": "postgres"
+  production: {
+    username: process.env.DB_USER || "postgres",
+    password: process.env.DB_PASSWORD || "postgres",
+    database: process.env.DB_NAME || "prueba1",
+    host: process.env.DB_HOST || "localhost",
+    logging: true,
+    dialect: "postgres"
   }
 }
 

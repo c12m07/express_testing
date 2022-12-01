@@ -25,8 +25,4 @@ try {
 app.use(Router);
 app.use(AuthRouter);
 
-app.listen(3001, () => {
-  console.log("Server listening at por 3001");
-});
-
 export default app
