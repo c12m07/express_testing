@@ -11,7 +11,7 @@ const config = {
   development: {
     username: process.env.DB_USER || "postgres",
     password: process.env.DB_PASSWORD || "postgres",
-    database: process.env.DB_NAME || "prueba1",
+    database: process.env.DB_NAME || "database",
     host: process.env.DB_HOST || "localhost",
     logging: true,
     dialect: "postgres"
