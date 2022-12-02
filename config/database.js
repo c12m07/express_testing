@@ -4,7 +4,7 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 const db = new Sequelize(
-  'prueba1', 
+  'prueba', 
   'postgres', 
   'postgres', 
   
