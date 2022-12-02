@@ -2,7 +2,7 @@ name: Express.js CI
 
 on:
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   test:
@@ -21,6 +21,7 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
+          
     steps:
       - name: Checkout
         uses: actions/checkout@v3
