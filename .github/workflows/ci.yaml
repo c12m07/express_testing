@@ -1,16 +1,8 @@
-#
-#   Profesor, intenté de todo pero tanto en el CI y el CD
-#   me aparece este mismo error y realmente no sé a qué se deba
-#   también puede ver el error más detalladamente en el github actions
-#
-#   /home/runner/work/express_testing/express_testing/node_modules/pg/lib/sasl.js:24
-#    throw new Error('SASL: SCRAM-SERVER-FIRST-MESSAGE: client password must be a string')
-#
-
 name: Express.js CI
+
 on:
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   test:
@@ -29,6 +21,7 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
+          
     steps:
       - name: Checkout
         uses: actions/checkout@v3
